@@ -1,5 +1,5 @@
 {
-  "name": "aula17",
+  "name": "Agenda",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -26,7 +26,8 @@
     "postcss": "^8.5.12",
     "postcss-loader": "^8.2.1",
     "regenerator-runtime": "^0.13.7",
-    "style-loader": "^4.0.0"
+    "style-loader": "^4.0.0",
+    "validator": "^13.15.35"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
