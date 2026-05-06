@@ -23,7 +23,7 @@ exports.register = async function (req, res) {
         });
         // return res.send(login.errors);
     } catch (err) {
-        console.log(e);
+        console.log(err);
         return res.render('404');
     }
 
