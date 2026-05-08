@@ -4,60 +4,61 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2"></div>
-                <div class="col-lg-8 my-3">
-                    <h1 class="text-center">Login</h1>
-                    <p class="text-center lead">Cadastra-se ou faça login.</p>
 
-                    <%- include('includes/messages') %>
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center">Criar conta ou Entrar</h1>
+                    <p class="text-center lead">Faça login ou crie sua conta abaixo</p>
+
+                    <%- include('includes/messages'); %>
 
                         <div class="row">
-                            <div class="col-lg">
-                                <h3>Cadastra-se</h3>
-                                <form action="/login/register" method="POST">
-                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                    <div class="mb-3">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" name="email"
-                                            aria-describedby="emailHelp">
+
+                            <div class="col-lg my-5">
+                                <h4>Faça seu cadastro</h4>
+                                <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
+
+                                <form class="form-cadastro" action="/login/register" method="POST">
+                                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                                    <div class="form-group">
+                                        <label>Seu e-mail</label>
+                                        <input type="email" class="form-control" name="email">
                                     </div>
-                                    <div class="mb-3">
-                                        <label>Password</label>
+                                    <div class="form-group">
+                                        <label>Sua senha</label>
                                         <input type="password" class="form-control" name="password">
                                     </div>
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    <button type="submit" class="btn btn-primary">Criar minha conta</button>
                                 </form>
+
                             </div>
 
-                            <div class="col-lg">
-                                <h3>Login</h3>
-                                <form action="/login/login" method="post">
-                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                    <div class="mb-3">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" name="email"
-                                            aria-describedby="emailHelp">
+                            <div class="col-lg my-5">
+                                <h4>Faça seu login</h4>
+
+                                <p>Se você já tem uma conta, faça login abaixo:</p>
+
+                                <form class="form-login" action="/login/login" method="POST">
+                                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                                    <div class="form-group">
+                                        <label>Seu e-mail</label>
+                                        <input type="email" class="form-control" name="email">
                                     </div>
-                                    <div class="mb-3">
-                                        <label>Password</label>
+                                    <div class="form-group">
+                                        <label>Sua senha</label>
                                         <input type="password" class="form-control" name="password">
                                     </div>
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    <button type="submit" class="btn btn-primary">Entrar</button>
                                 </form>
+
+
                             </div>
+
                         </div>
 
                 </div>
+
                 <div class="col-lg-2"></div>
             </div>
         </div>
 
         <%- include('includes/footer') %>
-        
