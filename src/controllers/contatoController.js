@@ -1,4 +1,4 @@
-const Contato = require('../models/ContatoModel');
+const Contato = require('../models/contatoModel');
 
 exports.index = (req, res) => {
   res.render('contato', {

@@ -1,4 +1,4 @@
-const Contato = require('../models/ContatoModel');
+const Contato = require('../models/contatoModel');
 
 exports.index = async(req, res) => {
   const contatos = await Contato.buscaContatos();
