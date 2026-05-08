@@ -9,7 +9,7 @@ mongoose.connect(process.env.CONNECTIONSTRING,
     useFindAndModify: false
   })
   .then(() => {
-    app.emit('pronto');
+    app.emit('pronto'); 
   })
   .catch(e => console.log(e));
 const session = require('express-session');
