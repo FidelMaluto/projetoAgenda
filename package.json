@@ -1,6 +1,6 @@
 {
   "name": "Agenda",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.0",
     "core-js": "^3.9.1",
