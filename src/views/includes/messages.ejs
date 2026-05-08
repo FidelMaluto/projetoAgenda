@@ -1,6 +1,6 @@
-<% if(errors.length > 0) { %>
-    <div class="row my-3">
-        <div class="col">
+<% if (errors.length> 0) { %>
+    <div class="row">
+        <div class="col my-3">
             <div class="alert alert-danger">
                 <% errors.forEach(erro=> { %>
                     <%= erro %><br>
@@ -10,14 +10,14 @@
     </div>
     <% } %>
 
-        <% if(success.length > 0) { %>
-            <div class="row my-3">
-                <div class="col">
-                    <div class="alert alert-success">
-                        <% success.forEach(success=> { %>
-                            <%= success %>
-                                <% }); %>
-                    </div>
+    <% if (success.length> 0) { %>
+    <div class="row">
+        <div class="col my-3">
+                <div class="alert alert-success">
+                    <% success.forEach(success=> { %>
+                      <%= success %><br>
+                        <% }); %>
                 </div>
             </div>
-            <% } %>
+        </div>
+    <% } %>
