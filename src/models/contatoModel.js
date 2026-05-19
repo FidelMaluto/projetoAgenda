@@ -76,5 +76,4 @@ Contato.delete = async function (id) {
   return contato;
 };
 
-
 module.exports = Contato;
