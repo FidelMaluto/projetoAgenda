@@ -15,7 +15,6 @@ exports.register = async function (req, res) {
             req.session.save(function () {
                 return res.redirect('back');
             });
-
             return;
         }
 
@@ -23,7 +22,6 @@ exports.register = async function (req, res) {
         req.session.save(function () {
             return res.redirect('back');
         });
-
     } catch (e) {
         console.log(e);
         return res.render('404');
@@ -40,7 +38,6 @@ exports.login = async function (req, res) {
             req.session.save(function () {
                 return res.redirect('back');
             });
-            
             return;
         }
 
@@ -49,7 +46,6 @@ exports.login = async function (req, res) {
         req.session.save(function () {
             return res.redirect('back');
         });
-        
     } catch (e) {
         console.log(e);
         return res.render('404');
