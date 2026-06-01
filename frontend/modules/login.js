@@ -28,8 +28,8 @@ export default class Login {
       error = true;
     }
 
-    if(passwordInput.value.length < 6 || passwordInput.value.length > 12) {
-      alert('Senha precisa ter entre 6 e 12 caracteres');
+    if(passwordInput.value.length < 4 || passwordInput.value.length > 12) {
+      alert('Senha precisa ter entre 4 e 12 caracteres');
       error = true;
     }
 

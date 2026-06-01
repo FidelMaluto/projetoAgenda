@@ -6,7 +6,7 @@ import Contato from './modules/contato';
 
 const login = new Login('.form-login');
 const cadastro = new Login('.form-cadastro');
-const contato = new Login('.form-contato');
+const contato = new Contato('.form-contato');
 
 login.init();
 cadastro.init();
