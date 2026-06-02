@@ -10,7 +10,7 @@ export default class Contato {
     };
 
     events() {
-        if(!this.form) return;
+        if (!this.form) return;
         this.form.addEventListener('submit', e => {
             e.preventDefault();
             this.validate(e);
@@ -27,26 +27,35 @@ export default class Contato {
 
         let error = false;
 
-        if(nomeInput.value.length < 3 || nomeInput.value.length > 15) {
-            alert('O nome deve conter entre 3 à 20 caracteres!');
-            error = true;
-        }
-        
-        if(sobrenomeInput.value.length < 3 || sobrenomeInput.value.length > 15) {
-            alert('O sobrenome deve conter entre 3 à 20 caracteres!');
-            error = true;
-        }
-        
-        if(!validator.isEmail(emailInput.value)){
-            alert('Email inválido.!');
-            error = true;
-        }
-        
-        if(telefoneInput.value.length !== 9) {
-            alert('O número de telefone deve conter apenas 9 digitos!');
+        if (nomeInput.value.length < 3 || nomeInput.value.length > 15) {
+            this.showErro('O nome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
 
-        if(!error) el.submit();
+        if (sobrenomeInput.value.length < 3 || sobrenomeInput.value.length > 15) {
+            this.showErro('O sobrenome deve conter entre 3 à 20 caracteres!');
+            error = true;
+        }
+
+        if (!validator.isEmail(emailInput.value)) {
+            this.showErro('Email inválido.!');
+            error = true;
+        }
+
+        if (telefoneInput.value.length !== 9) {
+            this.showErro('O número de telefone deve conter apenas 9 digitos!');
+            error = true;
+        }
+
+        if (!error) el.submit();
+
     }
+
+    showErro(campo, msg) {
+        const div = document.createElement('div');
+        div.innerHTML = msg;
+        div.classList.add('erroTxt');
+        campo.insertAdjacentElement('afterend', div);
+    }
+
 }
