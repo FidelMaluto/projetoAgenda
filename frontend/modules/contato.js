@@ -13,7 +13,7 @@ export default class Contato {
         if(!this.form) return;
         this.form.addEventListener('submit', e => {
             e.preventDefault();
-            this.validate();
+            this.validate(e);
         });
     };
 
@@ -27,12 +27,12 @@ export default class Contato {
 
         let error = false;
 
-        if(nomeInput.length < 3 || nomeInput.length > 15) {
+        if(nomeInput.value.length < 3 || nomeInput.value.length > 15) {
             alert('O nome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
         
-        if(sobrenomeInput.length < 3 || sobrenomeInput.length > 15) {
+        if(sobrenomeInput.value.length < 3 || sobrenomeInput.value.length > 15) {
             alert('O sobrenome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
@@ -42,7 +42,7 @@ export default class Contato {
             error = true;
         }
         
-        if(!telefoneInput.length == 9) {
+        if(telefoneInput.value.length !== 9) {
             alert('O número de telefone deve conter apenas 9 digitos!');
             error = true;
         }
