@@ -20,10 +20,10 @@ export default class Contato {
     validate(e, campo) {
         const el = e.target;
 
-        const nomeInput = el.querySelector('input[name="nome"]').campo;
-        const sobrenomeInput = el.querySelector('input[name="sobrenome"]').campo;
-        const emailInput = el.querySelector('input[name="email"]').campo;
-        const telefoneInput = el.querySelector('input[name="telefone"]').campo;
+        const nomeInput = campo.el.querySelector('input[name="nome"]');
+        const sobrenomeInput = campo.el.querySelector('input[name="sobrenome"]');
+        const emailInput = campo.el.querySelector('input[name="email"]');
+        const telefoneInput = campo.el.querySelector('input[name="telefone"]');
 
         let error = false;
 
