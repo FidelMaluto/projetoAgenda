@@ -28,22 +28,22 @@ export default class Contato {
         let error = false;
 
         if (nomeInput.value.length < 3 || nomeInput.value.length > 15) {
-            this.showErro(e, 'O nome deve conter entre 3 à 20 caracteres!');
+            this.showErro(nomeInput, 'O nome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
 
         if (sobrenomeInput.value.length < 3 || sobrenomeInput.value.length > 15) {
-            this.showErro(e, 'O sobrenome deve conter entre 3 à 20 caracteres!');
+            this.showErro(sobrenomeInput, 'O sobrenome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
 
         if (!validator.isEmail(emailInput.value)) {
-            this.showErro(e, 'Email inválido.!');
+            this.showErro(emailInput, 'Email inválido.!');
             error = true;
         }
 
         if (telefoneInput.value.length !== 9) {
-            this.showErro(e, 'O número de telefone deve conter apenas 9 digitos!');
+            this.showErro(telefoneInput, 'O número de telefone deve conter apenas 9 digitos!');
             error = true;
         }
 
@@ -51,11 +51,11 @@ export default class Contato {
 
     }
 
-    showErro(e, msg) {
+    showErro(campo, msg) {
         const div = document.createElement('div');
         div.innerHTML = msg;
         div.classList.add('erroTxt');
-        e.insertAdjacentElement('afterend', div);
+        campo.insertAdjacentElement('afterend', div);
     }
 
 }
