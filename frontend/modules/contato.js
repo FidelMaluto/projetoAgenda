@@ -17,33 +17,33 @@ export default class Contato {
         });
     };
 
-    validate(e, campo) {
+    validate(e) {
         const el = e.target;
 
-        const nomeInput = campo.el.querySelector('input[name="nome"]');
-        const sobrenomeInput = campo.el.querySelector('input[name="sobrenome"]');
-        const emailInput = campo.el.querySelector('input[name="email"]');
-        const telefoneInput = campo.el.querySelector('input[name="telefone"]');
+        const nomeInput = el.querySelector('input[name="nome"]');
+        const sobrenomeInput = el.querySelector('input[name="sobrenome"]');
+        const emailInput = el.querySelector('input[name="email"]');
+        const telefoneInput = el.querySelector('input[name="telefone"]');
 
         let error = false;
 
         if (nomeInput.value.length < 3 || nomeInput.value.length > 15) {
-            this.showErro(campo, 'O nome deve conter entre 3 à 20 caracteres!');
+            this.showErro(e, 'O nome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
 
         if (sobrenomeInput.value.length < 3 || sobrenomeInput.value.length > 15) {
-            this.showErro(campo, 'O sobrenome deve conter entre 3 à 20 caracteres!');
+            this.showErro(e, 'O sobrenome deve conter entre 3 à 20 caracteres!');
             error = true;
         }
 
         if (!validator.isEmail(emailInput.value)) {
-            this.showErro(campo, 'Email inválido.!');
+            this.showErro(e, 'Email inválido.!');
             error = true;
         }
 
         if (telefoneInput.value.length !== 9) {
-            this.showErro(campo, 'O número de telefone deve conter apenas 9 digitos!');
+            this.showErro(e, 'O número de telefone deve conter apenas 9 digitos!');
             error = true;
         }
 
@@ -51,11 +51,11 @@ export default class Contato {
 
     }
 
-    showErro(campo, msg) {
+    showErro(e, msg) {
         const div = document.createElement('div');
         div.innerHTML = msg;
         div.classList.add('erroTxt');
-        campo.insertAdjacentElement('afterend', div);
+        e.insertAdjacentElement('afterend', div);
     }
 
 }
