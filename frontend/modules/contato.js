@@ -20,6 +20,10 @@ export default class Contato {
     validate(e) {
         const el = e.target;
 
+        for (const erro of el.querySelectorAll('.erroTxt')) {
+            erro.remove();
+        }
+
         const nomeInput = el.querySelector('input[name="nome"]');
         const sobrenomeInput = el.querySelector('input[name="sobrenome"]');
         const emailInput = el.querySelector('input[name="email"]');
@@ -48,6 +52,7 @@ export default class Contato {
         }
 
         if (!error) el.submit();
+        // return error;
 
     }
 
