@@ -52,7 +52,6 @@ export default class Contato {
         }
 
         if (!error) el.submit();
-        // return error;
 
     }
 
