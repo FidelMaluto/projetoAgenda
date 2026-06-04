@@ -60,7 +60,7 @@ export default class Contato {
         const div = document.createElement('div');
         div.innerHTML = msg;
         div.classList.add('erroTxt');
-        campo.insertAdjacentElement('afterend', div);
+        campo.insertAdjacentElement('afterend', div.style.color="red");
     }
 
 }
