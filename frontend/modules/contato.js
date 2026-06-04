@@ -59,8 +59,9 @@ export default class Contato {
     showErro(campo, msg) {
         const div = document.createElement('div');
         div.innerHTML = msg;
+        div.style.color="red";
         div.classList.add('erroTxt');
-        campo.insertAdjacentElement('afterend', div.style.color="red");
+        campo.insertAdjacentElement('afterend', div);
     }
 
 }
